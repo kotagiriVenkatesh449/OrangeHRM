@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
+import org.qa.utilities.Constants;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -48,8 +49,8 @@ public class TestBase {
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
 		driver.manage().window().fullscreen();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Constants.Implicit_wait, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(Constants.Pageload_timeout,TimeUnit.SECONDS);
 		
 		driver.get(prop.getProperty("URL"));
 	}
